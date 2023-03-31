@@ -1,3 +1,13 @@
+"""
+DYNAMIC IMAGE GENERERATION MODEL
+This script automatically runs image generation and prediciton from start to finish for 5 samples per model:
+Text processing, Image Generation, Object Detection + encoder, Similarity Checker and Predictions
+Change number of captions to read from test_data.json file in the Generation scripts in order 
+to change number of generated images.
+This script servers as a easy, ready-to-go demonstration and a dynamic model for testing our approach
+"""
+
+
 from image_generation.DALLE import *
 from image_generation.SD import *
 from config import *
@@ -35,6 +45,8 @@ else:
 #Similarity checker
 
 #Predictions
+
+#Compare with predictions from COSMOS?
 
 #Results
 

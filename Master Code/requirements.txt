@@ -5,10 +5,12 @@ diffusers
 transformers 
 scipy 
 ftfy
-ipywidgets==7.7.2
+opencv-python
+ipywidgets
 accelerate
 pandas
 spacy
 cv2
 json
+pathlib
 
