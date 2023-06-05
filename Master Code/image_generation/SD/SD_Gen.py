@@ -46,10 +46,9 @@ experimental_pipe = experimental_pipe.to("cuda")
 
 
 # Generate specific images
-#test_data = read_json_data(os.path.join(DATA_DIR, 'test_data.json')) [0:5]
-
+test_data = read_json_data(os.path.join(DATA_DIR, 'test_data.json')) [0:5]
 #Generate all images
-test_data = read_json_data(os.path.join(DATA_DIR, 'test_data.json'))
+#test_data = read_json_data(os.path.join(DATA_DIR, 'test_data.json'))
 
 for i in test_data:
   description_1 = i['caption1_modified']

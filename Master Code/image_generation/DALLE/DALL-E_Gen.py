@@ -111,9 +111,9 @@ for index, image_dict in enumerate(response["data"]):
 
 
 # Generate specific images
-#test_data = read_json_data(os.path.join(DATA_DIR, 'test_data.json')) [0:5] #see comment below
+test_data = read_json_data(os.path.join(DATA_DIR, 'test_data.json')) [0:5] #see comment below
 #Generate all images
-test_data = read_json_data(os.path.join(DATA_DIR, 'test_data.json'))
+#test_data = read_json_data(os.path.join(DATA_DIR, 'test_data.json'))
 """
 ===============
 If you run into an error, reset position of test_data.json caption to read and count to the same position
