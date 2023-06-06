@@ -17,7 +17,7 @@ JSON files contains the mapping between the generated images, original and modif
   "img_gen2": "<generated_image2>",
   "label": "ooc/not-ooc"
 }
-
+```
 
 * img_local_path: The original image file path name from the COSMOS test dataset.
 * original_caption1: The original caption1 associated with the original image from the
