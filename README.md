@@ -1,18 +1,23 @@
 # Detecting Out-of-Context Image-Caption Pairs in News: A Counter-Intuitive Method
 
+![Teaser Image]('Master Code/Teaser/finalfinalfinalmodelarch.jpg')
+
+
 ### Datasets
 Unzip the dataset zips in Datasets folder into corresponding folders for DALl-E 2 and SD.
 JSON files contains the mapping between the generated images, original and modified captions, original image path and labels:
+```json
 {
-2 'img_local_path': <img_path>,
-3 'original_caption1': <caption1>,
-4 'caption1_mod': <caption1_modified>,
-5 'img_gen1': <generated_image1>,
-6 'original_caption2': <caption2>,
-7 'caption2_mod': <caption2_modified>,
-8 'img_gen2': <generated_image2>,
-9 'label': 'ooc/not-ooc'
-10 }
+  "img_local_path": "<img_path>",
+  "original_caption1": "<caption1>",
+  "caption1_mod": "<caption1_modified>",
+  "img_gen1": "<generated_image1>",
+  "original_caption2": "<caption2>",
+  "caption2_mod": "<caption2_modified>",
+  "img_gen2": "<generated_image2>",
+  "label": "ooc/not-ooc"
+}
+
 
 * img_local_path: The original image file path name from the COSMOS test dataset.
 * original_caption1: The original caption1 associated with the original image from the
