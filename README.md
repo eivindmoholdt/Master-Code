@@ -1,7 +1,33 @@
 # Detecting Out-of-Context Image-Caption Pairs in News: A Counter-Intuitive Method
-Detecting Out-of-Context Image-Caption Pairs in News: A Counter-Intuitive Method
 
-Under construction :)
+### Datasets
+Unzip the dataset zips in Datasets folder into corresponding folders for DALl-E 2 and SD.
+JSON files contains the mapping between the generated images, original and modified captions, original image path and labels:
+{
+2 'img_local_path': <img_path>,
+3 'original_caption1': <caption1>,
+4 'caption1_mod': <caption1_modified>,
+5 'img_gen1': <generated_image1>,
+6 'original_caption2': <caption2>,
+7 'caption2_mod': <caption2_modified>,
+8 'img_gen2': <generated_image2>,
+9 'label': 'ooc/not-ooc'
+10 }
+
+* img_local_path: The original image file path name from the COSMOS test dataset.
+* original_caption1: The original caption1 associated with the original image from the
+COSMOS test dataset
+* caption1_mod: The modified caption1, post NER and bad word censoring, associated
+with the original image.
+* img_gen1: The generated image associated to (modified) caption1.
+* original_caption2: The original caption2 associated with the original image from the
+COSMOS test dataset
+* caption2_mod: The modified caption2, post NER and bad word censoring, associated
+with the original image.
+* img_gen2: The generated image associated to (modified) caption2.
+* label: Class label whether the two captions are out-of-context with respect to the image (1=Out-of-Context, 0=Not-Out-of-Context ), from the COSMOS test dataset.
+
+
 ### Requirements and pre-requisites:
 All the code in this project was written and run in Google Colab. 
 We recommend running all the code in this project in Google Colab.
@@ -50,4 +76,6 @@ Note that we originally load the captions from the original test_data.json file 
 The modified captions we got post NER and censoring are saved in DALLE.json and/or SDv14.json files, you can load both original and mod captions from there as well
 All details are outlined in the respective files
 
-# Predictions and evaluation
+CardinalImages folder contains the filepaths to images from DALL-E 2 and SD clearly affected by the 'Cardinal' entity label.
+
+## Predictions and evaluation
