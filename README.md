@@ -1,6 +1,6 @@
 # Detecting Out-of-Context Image-Caption Pairs in News: A Counter-Intuitive Method
 
-![Teaser Image]('Master Code/Teaser/finalfinalfinalmodelarch.jpg')
+![Teaser Image](https://github.com/eivindmoholdt/Master-Code/blob/main/Master%20Code/Teaser/finalfinalfinalmodelarch.jpg?raw=True)
 
 
 ### Datasets
@@ -45,7 +45,7 @@ Note: This also includes necesarry packages for the COSMOS model. However, packa
 
 DALL-E 2 (Open AI API) and Stable Diffusion (HuggingFace) setups are detailed in the respective python files in '/image_generation'
 
-CLIP:
+##### CLIP:
 CLIP can be loaded by Git cloning git+https://github.com/openai/CLIP.git or via SentenceTransformers library
 SentenceTransformers is included in requirements.txt.
 SentenceTransformers library built on Pytorch allows for the easiest implementation:
@@ -56,21 +56,21 @@ See https://huggingface.co/sentence-transformers/clip-ViT-B-32
 and https://huggingface.co/sentence-transformers/clip-ViT-L-14
 for documentation
 
-YOLOv5:
+##### YOLOv5:
 YOLOv5 is easily implemented with Pytorch
 yolov5 = torch.hub.load('ultralytics/yolov5', 'yolov5', pretrained=True)
 You can set pretrained=True or instead download the weights for the model and set path='path_to_weights'
 Parameter 'yolov5' can be changed to 'yolov5s' or similar if you want specific model versions
 See https://pytorch.org/hub/ultralytics_yolov5/ for more info
 
-YOLOv7:
+##### YOLOv7:
 Clone YOLOv7 github rep with ! git clone https://github.com/WongKinYiu/yolov7.git
 Import the custom function with:
 from yolov7.hubconf import custom
 yolov7 = custom('yolov7.pt') #add correct path to .pt file
 after this YOLOv7 can be used the same way as YOLOv5
 
-MASK-RCNN:
+##### MASK-RCNN:
 Loaded trough Detectron2
 See Detectron2 docs for guide:
 https://detectron2.readthedocs.io/en/latest/tutorials/install.html
