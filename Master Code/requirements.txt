@@ -7,7 +7,7 @@ transformers
 scipy 
 ftfy
 ultralytics
-ipywidgets==7.7.2
+ipywidgets==7.7.2s
 accelerate
 efficientnet_pytorch
 ipython-autotime

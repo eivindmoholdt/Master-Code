@@ -7,40 +7,27 @@ to change number of generated images.
 This script servers as a easy, ready-to-go demonstration and a dynamic model for testing our approach
 """
 
-
 from image_generation.DALLE import *
 from image_generation.SD import *
 from config import *
+import config
+from ODOEcalcsim import calc_sim_yolo, calc_sim_maskrcnn, set_detection_model
+from OEcalcsim import calc_sim_encoder
 
-#Text Processing Step
-if text_processing_NER == True:
-    from utils.text_utils import modify_caption_replace_entities
-    modify_caption_replace_entities(caption)
+#Image Generation
+
+
+#Object Detection and Object Encoder
+if config.USE_DETECTION:
+    if config.YOLOV5 or config.YOLOV7:
+        calc_sim_yolo()
+    if config.MASKRCNN:
+        calc_sim_maskrcnn()
 else:
-    pass
+    calc_sim_encoder()
+        
+#Only Object Encoder
 
-#Censor captions
-if censoring == True:
-    pass
-else:
-    pass
-
-#model choice
-if DALLE==True:
-    pass
-else:
-    pass
-
-if SD==True:
-    pass
-else:
-    pass
-
-
-#Object Detection
-
-
-#Object Encoder
 
 #Similarity checker
 

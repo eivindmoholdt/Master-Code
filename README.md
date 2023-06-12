@@ -33,6 +33,10 @@ with the original image.
 * img_gen2: The generated image associated to (modified) caption2.
 * label: Class label whether the two captions are out-of-context with respect to the image (1=Out-of-Context, 0=Not-Out-of-Context ), from the COSMOS test dataset.
 
+#### Important!
+The COSMOS dataset is not public. If you want to test our approach with the main.py file using the COSMOS dataset captions, visit https://detecting-cheapfakes.github.io/ or fill out the form at https://docs.google.com/forms/d/e/1FAIpQLSf7rZ1-UX419nXqCp2NldekqVNJcS2W9A3jL7MTKhom41p0eg/viewform to get access.
+See the COSMOS github for more information.
+
 
 ### Requirements and pre-requisites:
 All the code in this project was written and run in Google Colab. 

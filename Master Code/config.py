@@ -12,15 +12,19 @@ TARGET_DIR = Path.cwd() / "Responses" #only used for DALL-E
 OPENAI_API_KEY=""
 
 #Choose text-to-image model. Do not run both models at the same time
-DALLE = True
+DALLE2 = True
 SD = False
 
-#Text Processing
-text_processing_NER = True
-censoring = True
+# Object Detection Model
+YOLOV5 = True
+YOLOV7 = False
+MASKRCNN = False
+
+
 
 # Device
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
 
 
 
