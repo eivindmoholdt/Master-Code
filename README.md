@@ -6,7 +6,15 @@ The core idea of this method is to utilize the perceptual similarity between syn
 
 ### Datasets
 Unzip the dataset zips in Datasets folder into corresponding folders for DALl-E 2 and SD.
-JSON files contains the mapping between the generated images, original and modified captions, original image path and labels:
+
+#### Important!
+The COSMOS dataset is not public. If you want to test our approach, visit https://detecting-cheapfakes.github.io/ or fill out [this form]{https://docs.google.com/forms/d/e/1FAIpQLSf7rZ1-UX419nXqCp2NldekqVNJcS2W9A3jL7MTKhom41p0eg/viewform} to get access.
+See the COSMOS github for more information.
+
+In order to map the generated images to the original images and the captions, we create a JSON file that contains the mapping between the generated images, original and modified captions, original image path and labels.
+After downloading the COSMOS dataset, run the scripts DALLEjson.py and SDjson.py in order to generate the JSON files to map the generated images.
+The JSON files will be in the structure as below:
+
 ```json
 {
   "img_local_path": "<img_path>",
@@ -33,14 +41,11 @@ with the original image.
 * img_gen2: The generated image associated to (modified) caption2.
 * label: Class label whether the two captions are out-of-context with respect to the image (1=Out-of-Context, 0=Not-Out-of-Context ), from the COSMOS test dataset.
 
-#### Important!
-The COSMOS dataset is not public. If you want to test our approach with the main.py file using the COSMOS dataset captions, visit https://detecting-cheapfakes.github.io/ or fill out the form at https://docs.google.com/forms/d/e/1FAIpQLSf7rZ1-UX419nXqCp2NldekqVNJcS2W9A3jL7MTKhom41p0eg/viewform to get access.
-See the COSMOS github for more information.
 
 
 ### Requirements and pre-requisites:
 All the code in this project was written and run in Google Colab. 
-We recommend running all the code in this project in Google Colab.
+We recommend running all the code in this project in Google Colab or similar.
 The Python files has been written to allow easy automatic testing of our model. 
 To test parts of the code we have included the raw IPYNB files in '/Google' folder.
 
