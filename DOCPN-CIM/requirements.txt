@@ -7,7 +7,7 @@ transformers
 scipy 
 ftfy
 ultralytics
-ipywidgets==7.7.2s
+ipywidgets==7.7.2
 accelerate
 efficientnet_pytorch
 ipython-autotime
@@ -30,7 +30,6 @@ tqdm
 pillow 
 spacy 
 pandas 
-json 
 opencv-python
 Cython 
 nltk 

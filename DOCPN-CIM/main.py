@@ -9,6 +9,8 @@ This script servers as a easy, ready-to-go demonstration and a dynamic model for
 
 from image_generation.DALLE.DALLE2gen import DALLE2_gen
 from image_generation.SD.SDgen import SDgen
+from DALLEjson import dallejson
+from SDjson import SDjson
 from config import *
 import config
 from ODOEcalcsim import calc_sim_yolo, calc_sim_maskrcnn
@@ -21,9 +23,12 @@ from sklearn.metrics import confusion_matrix, accuracy_score, precision_score, r
 #Image Generation
 if config.DALLE2:
     DALLE2_gen()
+    dallejson()
+    jsonfile = "DALLE.json"
 if config.SD:
     SDgen()
-
+    SDjson()
+    jsonfile = "SDv14.json"
 
 #Object Detection and Object Encoder
 if config.USE_DETECTION:
@@ -36,12 +41,12 @@ else:
     similarity = calc_sim_encoder()
     
 #Predictions
-#For DALL-E 2 predictions simply change the input JSON file.
+
 #you can adjust threshold in config. In order to get an even prediction of OOC/NOOC values we recommend using statistics.median of sim_scores as threshold
 gold_labels = []
 predicted_labels = []
 sim_scores = []
-with open("SDv14.json") as f:
+with open(jsonfile) as f:
     my_dict = [json.loads(line) for line in f]
 
     mappe = []

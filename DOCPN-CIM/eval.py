@@ -10,8 +10,6 @@ from yolov5resnet_similarity import calc_sim
 # First, we run object Detection using a pre-trained YOLOv5 model to get bounding boxes
 # and crop the bounding boxes as images, to feed into ResNET for feature extraction
 
-# Load the YOLOv5 model
-yolov5 = torch.hub.load('ultralytics/yolov5', 'yolov5s', pretrained=True)
 
 # Load pre-trained ResNet50 model
 resnet50 = torch.hub.load('pytorch/vision:v0.9.0', 'resnet50', pretrained=True)

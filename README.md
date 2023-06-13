@@ -1,6 +1,6 @@
 # Detecting Out-of-Context Image-Caption Pairs in News: A Counter-Intuitive Method
 
-![Teaser Image](https://github.com/eivindmoholdt/Master-Code/blob/main/Master%20Code/Teaser/finalfinalfinalmodelarch.jpg?raw=True)
+![Teaser Image](https://github.com/eivindmoholdt/Master-Code/blob/main/DOCPN-CIM/Teaser/finalfinalfinalmodelarch.jpg?raw=True)
 
 The core idea of this method is to utilize the perceptual similarity between synthetically generated images (from both DALLE-2 and Stable Diffusion) for detecting Out-Of-Context content in image and caption pairs. By comparing the original image to the generated images, we successfully detect Out-Of-Context (OOC) in the left image-caption triplets, and Not-Out-of-Context (NOOC) in the right image-caption triplets. The original captions 1 and 2 are presented below each correlating generated image.
 

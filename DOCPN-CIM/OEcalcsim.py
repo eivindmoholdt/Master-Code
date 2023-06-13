@@ -1,16 +1,9 @@
 import torch
 import torchvision.transforms as transforms
 from PIL import Image
-import numpy as np
 import cv2
-import config
 from config import *
-
-
-# import some common libraries
-import numpy as np
-import os, json, cv2, random
-from google.colab.patches import cv2_imshow
+from sklearn.metrics.pairwise import cosine_similarity
 
 
 def calc_sim_encoder(image_pairs):

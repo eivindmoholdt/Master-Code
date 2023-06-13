@@ -35,6 +35,17 @@ import torchvision.models as models
 from efficientnet_pytorch import EfficientNet
 from sentence_transformers import SentenceTransformer, util
 
+# CLIP has a slightly different method for image encoding than the other encoders,
+# It is therefore necessary to run them separately
+
+
+CLIPl14 = SentenceTransformer('clip-ViT-L-14')
+CLIPb32 = SentenceTransformer('clip-ViT-B-32')
+
+clip = {
+    'CLIPl14':CLIPl14,
+    'CLIPb32':CLIPb32,
+}
 
 
 # Load pre-trained object encoders
@@ -44,12 +55,8 @@ resnext50_32x4d = models.resnext50_32x4d(pretrained=True)
 densenet121 = models.densenet121(pretrained=True)
 densenet169 = models.densenet169(pretrained=True)
 efficientnet = EfficientNet.from_pretrained('efficientnet-b5')
-CLIPl14 = SentenceTransformer('clip-ViT-L-14')
-CLIPb32 = SentenceTransformer('clip-ViT-B-32')
 
 encoders = {
-  'CLIPl14':CLIPl14,
-  'CLIPb32':CLIPb32,
   'ResNet18': resnet18,
   'ResNet50': resnet50,
   'ResNext': resnext50_32x4d,
