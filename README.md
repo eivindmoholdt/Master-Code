@@ -5,7 +5,7 @@
 The core idea of this method is to utilize the perceptual similarity between synthetically generated images (from both DALLE-2 and Stable Diffusion) for detecting Out-Of-Context content in image and caption pairs. By comparing the original image to the generated images, we successfully detect Out-Of-Context (OOC) in the left image-caption triplets, and Not-Out-of-Context (NOOC) in the right image-caption triplets. The original captions 1 and 2 are presented below each correlating generated image.
 
 ### Datasets
-Unzip the dataset zips in Datasets folder into corresponding folders for DALl-E 2 and SD.
+Unzip the dataset zips in Datasets folder into corresponding folders for DALL-E 2 and SD.
 
 #### Important!
 The COSMOS dataset is not public. If you want to test our approach, visit https://detecting-cheapfakes.github.io/ or fill out https://docs.google.com/forms/d/e/1FAIpQLSf7rZ1-UX419nXqCp2NldekqVNJcS2W9A3jL7MTKhom41p0eg/viewform to get access.
@@ -87,10 +87,11 @@ https://detectron2.readthedocs.io/en/latest/tutorials/install.html
 
 ## Image Generation
 The Image Generation folder contains the Python files DALL-E-2_Gen.py and SD_Gen.py, for generating datasets with DALL-E 2 and SD.
-Note that we originally load the captions from the original test_data.json file from COSMOS for image generation.
-The modified captions we got post NER and censoring are saved in DALLE.json and/or SDv14.json files, you can load both original and mod captions from there as well
-All details are outlined in the respective files
+We load the captions from the original test_data.json file from COSMOS for image generation.
 
 CardinalImages folder contains the filepaths to images from DALL-E 2 and SD clearly affected by the 'Cardinal' entity label.
 
 ## Predictions and evaluation
+The main.py file servers as a ready-to-go demonstration and a dynamic model for testing our approach.
+The script automatically runs image generation and prediciton from start to finish for 5 samples per model, including:
+Text processing, Image Generation + JSON files, Object Detection + Encoder, Similarity Checker and Predictions
