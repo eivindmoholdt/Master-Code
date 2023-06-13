@@ -8,7 +8,7 @@ The core idea of this method is to utilize the perceptual similarity between syn
 Unzip the dataset zips in Datasets folder into corresponding folders for DALl-E 2 and SD.
 
 #### Important!
-The COSMOS dataset is not public. If you want to test our approach, visit https://detecting-cheapfakes.github.io/ or fill out [this form]{https://docs.google.com/forms/d/e/1FAIpQLSf7rZ1-UX419nXqCp2NldekqVNJcS2W9A3jL7MTKhom41p0eg/viewform} to get access.
+The COSMOS dataset is not public. If you want to test our approach, visit https://detecting-cheapfakes.github.io/ or fill out https://docs.google.com/forms/d/e/1FAIpQLSf7rZ1-UX419nXqCp2NldekqVNJcS2W9A3jL7MTKhom41p0eg/viewform to get access.
 See the COSMOS github for more information.
 
 In order to map the generated images to the original images and the captions, we create a JSON file that contains the mapping between the generated images, original and modified captions, original image path and labels.
