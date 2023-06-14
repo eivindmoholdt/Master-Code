@@ -5,14 +5,15 @@ import torch
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 DATA_DIR = Path.cwd() #sets DATA_DIR to current folder
-IMAGE_DIR = Path.cwd() / "Images" #only used for DALL-E
-IMAGE_DIR.mkdir(exist_ok=True) #only used for DALL-E
-TARGET_DIR = Path.cwd() / "Responses" #only used for DALL-E
+COSMOS_DATA = '/content/drive/MyDrive/COSMOS/dataset/data/' #add filepath to COSMOS folder with dataset and json files
 
 #Set API key.
 #Sign up for the OpenAI API and create a new API key by clicking on the dropdown menu on your profile and selecting View API keys
 #Add your OpenAI API key found at https://platform.openai.com/account/api-keys
 OPENAI_API_KEY=""
+
+#add valid token from https://huggingface.co/settings/tokens to be able to run the Stable Diffusion model
+HFTOKEN = ''
 
 
 #Choose text-to-image model. Do not run both models at the same time

@@ -1,10 +1,13 @@
 import json
+from config import COSMOS_DATA
+import os
+
 
 def dallejson():
     # Set the desired filename
     output_filename = "DALLE.json"
 
-    with open("dataset/data/test_data.json") as f:
+    with open(os.path.join(COSMOS_DATA, 'test_data.json')) as f:
         my_dict = [json.loads(line) for line in f]
 
         with open(output_filename, 'w') as outfile:

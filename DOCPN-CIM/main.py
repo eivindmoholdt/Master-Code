@@ -7,10 +7,6 @@ to change number of generated images.
 This script servers as a easy, ready-to-go demonstration and a dynamic model for testing our approach
 """
 
-from image_generation.DALLE.DALLE2gen import DALLE2_gen
-from image_generation.SD.SDgen import SDgen
-from DALLEjson import dallejson
-from SDjson import SDjson
 from config import *
 import config
 from ODOEcalcsim import calc_sim_yolo, calc_sim_maskrcnn
@@ -22,10 +18,14 @@ from sklearn.metrics import confusion_matrix, accuracy_score, precision_score, r
 
 #Image Generation
 if config.DALLE2:
+    from image_generation.DALLE.DALLE2gen import DALLE2_gen
+    from image_generation.DALLE.DALLEjson import dallejson
     DALLE2_gen()
     dallejson()
     jsonfile = "DALLE.json"
 if config.SD:
+    from image_generation.SD.SDgen import SDgen
+    from image_generation.SD.SDjson import SDjson
     SDgen()
     SDjson()
     jsonfile = "SDv14.json"

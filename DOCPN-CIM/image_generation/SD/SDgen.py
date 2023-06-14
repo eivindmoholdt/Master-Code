@@ -9,14 +9,31 @@ import torch
 from torchtext import data
 import json
 import cv2
-spacy_en = spacy.load('en_core_web_sm')
-stemmer = SnowballStemmer(language="english")
+from pathlib import Path
 from torchtext.vocab import GloVe, FastText
 #We use the utils from COSMOS to load the test.json file. CD to COSMOS folder or add COSMOS.utils.config and COSMOS.utils.common_utils to get right path
-from config import DATA_DIR
-from COSMOS.utils.dataset_utils import modify_caption_replace_entities
-from nltk.stem.snowball import SnowballStemmer
+from config import COSMOS_DATA, HFTOKEN
+nlp = spacy.load("en_core_web_sm")
 
+
+#Function borrowed from COSMOS code at COSMOS.utils.dataset_utils.py
+def modify_caption_replace_entities(caption_text):
+    """
+        Utility function to replace named entities in the caption with their corresponding hypernyms
+
+        Args:
+            caption_text (str): Original caption with named entities
+
+        Returns:
+            caption_modified (str): Modified caption after replacing named entities
+    """
+    doc = nlp(caption_text)
+    caption_modified = caption_text
+    caption_entity_list = []
+    for ent in doc.ents:
+        caption_entity_list.append((ent.text, ent.label_))
+        caption_modified = caption_modified.replace(ent.text, ent.label_, 1)
+    return caption_modified
 
 
 """ Pretrained Stable Diffusion model from HuggingFace.
@@ -35,20 +52,18 @@ Note: Pipelines loaded with `torch_dtype=torch.float16` cannot run with `cpu` de
 
 """
 
-#For notebooks, Google Colab or Jupyter
-#add valid token from https://huggingface.co/settings/tokens to be able to run the Stable Diffusion model
-from huggingface_hub import notebook_login
-notebook_login()
 
 
 #Load the Stable Diffusion Pipeline.
-experimental_pipe = StableDiffusionPipeline.from_pretrained("CompVis/stable-diffusion-v1-4", revision="fp16", torch_dtype=torch.float16, use_auth_token=True) 
+experimental_pipe = StableDiffusionPipeline.from_pretrained("CompVis/stable-diffusion-v1-4", revision="fp16", torch_dtype=torch.float16, use_auth_token=HFTOKEN) 
 #Add pipe.to("cuda") to utilize GPU
 experimental_pipe = experimental_pipe.to("cuda")
 
 def SDgen():
+  IMAGE_DIR = Path.cwd() / "NewDatasets/SD"
+  IMAGE_DIR.mkdir(parents=True, exist_ok=True)
   # Generate specific images
-  with open(os.path.join(DATA_DIR, 'test_data.json')) as f:
+  with open(os.path.join(COSMOS_DATA, 'test_data.json')) as f:
     test_data = [json.loads(line) for line in f][0:5]
 
   for i in test_data:
