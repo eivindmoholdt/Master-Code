@@ -81,7 +81,7 @@ yolov7 = custom('yolov7.pt') #add correct path to .pt file
 after this YOLOv7 can be used the same way as YOLOv5
 
 ##### MASK-RCNN:
-Loaded trough Detectron2
+Loaded trough Detectron2 with !python -m pip install 'git+https://github.com/facebookresearch/detectron2.git'
 See Detectron2 docs for guide:
 https://detectron2.readthedocs.io/en/latest/tutorials/install.html
 
