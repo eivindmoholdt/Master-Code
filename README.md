@@ -1,6 +1,6 @@
 # Detecting Out-of-Context Image-Caption Pairs in News: A Counter-Intuitive Method
 
-Research paper:
+### Research paper:
 https://doi.org/10.48550/arXiv.2308.16611
 
 Publication: 
