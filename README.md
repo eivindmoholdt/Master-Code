@@ -3,10 +3,12 @@
 ### Research paper:
 https://doi.org/10.48550/arXiv.2308.16611
 
+```
 Publication: 
 eprint arXiv:2308.16611
  Pub Date: August 2023 DOI: 
-10.48550/arXiv.2308.16611 
+10.48550/arXiv.2308.16611
+``` 
 
  arXiv: arXiv:2308.16611  Bibcode:  Keywords: 
 Computer Science - Computer Vision and Pattern Recognition
