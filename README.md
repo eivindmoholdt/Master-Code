@@ -111,6 +111,7 @@ Text processing, Image Generation + JSON files, Object Detection + Encoder, Simi
 
 
 # Cite this work:
+'''
 @misc{moholdt2023detecting,
       title={Detecting Out-of-Context Image-Caption Pairs in News: A Counter-Intuitive Method}, 
       author={Eivind Moholdt and Sohail Ahmed Khan and Duc-Tien Dang-Nguyen},
@@ -119,3 +120,4 @@ Text processing, Image Generation + JSON files, Object Detection + Encoder, Simi
       archivePrefix={arXiv},
       primaryClass={cs.CV}
 }
+'''
