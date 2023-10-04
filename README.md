@@ -1,5 +1,17 @@
 # Detecting Out-of-Context Image-Caption Pairs in News: A Counter-Intuitive Method
 
+Research paper:
+https://doi.org/10.48550/arXiv.2308.16611
+
+Publication: 
+eprint arXiv:2308.16611
+ Pub Date: August 2023 DOI: 
+10.48550/arXiv.2308.16611 
+
+ arXiv: arXiv:2308.16611  Bibcode:  Keywords: 
+Computer Science - Computer Vision and Pattern Recognition
+ E-Print Comments: ACM International Conference on Content-Based Multimedia Indexing (CBMI '23)
+
 ![Teaser Image](https://github.com/eivindmoholdt/Master-Code/blob/main/DOCPN-CIM/Teaser/finalfinalfinalmodelarch.jpg?raw=True)
 
 The core idea of this method is to utilize the perceptual similarity between synthetically generated images (from both DALLE-2 and Stable Diffusion) for detecting Out-Of-Context content in image and caption pairs. By comparing the original image to the generated images, we successfully detect Out-Of-Context (OOC) in the left image-caption triplets, and Not-Out-of-Context (NOOC) in the right image-caption triplets. The original captions 1 and 2 are presented below each correlating generated image.
@@ -95,3 +107,15 @@ CardinalImages folder contains the filepaths to images from DALL-E 2 and SD clea
 The main.py file servers as a ready-to-go demonstration and a dynamic model for testing our approach.
 The script automatically runs image generation and prediciton from start to finish for 5 samples per model, including:
 Text processing, Image Generation + JSON files, Object Detection + Encoder, Similarity Checker and Predictions
+
+
+
+# Cite this work:
+@misc{moholdt2023detecting,
+      title={Detecting Out-of-Context Image-Caption Pairs in News: A Counter-Intuitive Method}, 
+      author={Eivind Moholdt and Sohail Ahmed Khan and Duc-Tien Dang-Nguyen},
+      year={2023},
+      eprint={2308.16611},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
+}
